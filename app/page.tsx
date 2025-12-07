@@ -1,29 +1,31 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import Hero from '@/components/home/Hero';
-import ProductGrid from '@/components/home/ProductGrid';
-import { products } from '@/lib/data';
+import React, { useState, useEffect } from "react";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/home/Hero";
+import ProductGrid from "@/components/home/ProductGrid";
+import { products } from "@/lib/data";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [activeCategory, setActiveCategory] = useState('All');
-  const [activeSubCategory, setActiveSubCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeSubCategory, setActiveSubCategory] = useState("All");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Initialize theme based on preference and apply to document
   useEffect(() => {
     // Check local storage or system preference
-    const isDark = localStorage.getItem('theme') === 'dark' ||
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const isDark =
+      localStorage.getItem("theme") === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
 
     setDarkMode(isDark);
     if (isDark) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
@@ -32,27 +34,27 @@ export default function App() {
     setDarkMode(newMode);
 
     if (newMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   };
 
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
     // Reset subcategory when switching main category
-    setActiveSubCategory('All');
+    setActiveSubCategory("All");
   };
 
-  const filteredProducts = products.filter(p => {
+  const filteredProducts = products.filter((p) => {
     // 1. Filter by Main Category
-    if (activeCategory !== 'All' && p.category !== activeCategory) {
+    if (activeCategory !== "All" && p.category !== activeCategory) {
       return false;
     }
     // 2. Filter by Sub Category
-    if (activeSubCategory !== 'All' && p.subcategory !== activeSubCategory) {
+    if (activeSubCategory !== "All" && p.subcategory !== activeSubCategory) {
       return false;
     }
     return true;
@@ -61,7 +63,6 @@ export default function App() {
   return (
     <div className="transition-colors duration-300">
       <div className="min-h-screen transition-colors duration-300 bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100 font-sans">
-
         <Header
           darkMode={darkMode}
           toggleTheme={toggleTheme}
