@@ -17,7 +17,9 @@ interface ProductCardProps {
     price: string;
     appleLink?: string;
     androidLink?: string;
+    link?: string;
     hideButton?: boolean;
+    buttonText?: string;
   };
 }
 
@@ -107,9 +109,18 @@ export default function ProductCard({ product }: ProductCardProps) {
               Play Store <ExternalLink size={12} />
             </a>
           </div>
+        ) : product.link ? (
+          <a
+            href={product.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm font-semibold bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-lg hover:opacity-90 transition-opacity"
+          >
+            {product.buttonText || "View Item"} <ExternalLink size={14} />
+          </a>
         ) : !product.hideButton ? (
           <button className="flex items-center gap-2 text-sm font-semibold bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
-            View Item <ExternalLink size={14} />
+            {product.buttonText || "View Item"} <ExternalLink size={14} />
           </button>
         ) : null}
       </div>

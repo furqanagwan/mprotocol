@@ -82,6 +82,13 @@ export default function Hero({
                 working out, the specific routine does not matter.
               </p>
             )}
+            {activeSubCategory === "Oral" && (
+              <p className="text-sm text-gray-500 italic">
+                Even with a perfect routine, manual removal of calculus is
+                required. Schedule professional hygiene appointments every 3-6
+                months.
+              </p>
+            )}
           </div>
         )}
       </div>

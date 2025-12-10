@@ -26,7 +26,9 @@ export interface Product {
   price: string;
   appleLink?: string;
   androidLink?: string;
+  link?: string;
   hideButton?: boolean;
+  buttonText?: string;
 }
 
 export const products: Product[] = [
@@ -43,6 +45,7 @@ export const products: Product[] = [
     color: "text-cyan-500",
     bg: "bg-cyan-50 dark:bg-cyan-900/20",
     price: "$$$",
+    link: "https://shop.oralb.co.uk/p/oral-b-io-10-black-electric-toothbrush-designed-by-braun/17370615/",
   },
   {
     id: 2,
@@ -56,6 +59,7 @@ export const products: Product[] = [
     color: "text-cyan-500",
     bg: "bg-cyan-50 dark:bg-cyan-900/20",
     price: "$",
+    link: "https://crest.com/en-us/oral-care-products/toothpaste/pro-health-advanced-gum-protection/?srsltid=AfmBOooR5PxvqrVqueutPM-87Sdg60Buk44BNU_JFR3JhszyFqllSpEG",
   },
   {
     id: 3,
@@ -69,6 +73,7 @@ export const products: Product[] = [
     color: "text-cyan-500",
     bg: "bg-cyan-50 dark:bg-cyan-900/20",
     price: "$",
+    link: "https://crest.com/en-us/oral-care-products/mouthwash/pro-health-advanced-extra-whitening-mouthwash",
   },
   {
     id: 4,
@@ -83,20 +88,36 @@ export const products: Product[] = [
     bg: "bg-cyan-50 dark:bg-cyan-900/20",
     price: "$",
   },
+  {
+    id: 33,
+    category: "Health",
+    subcategory: "Oral",
+    name: "TePe® Interdental Brush Original Mixed Pack",
+    reason:
+      "Cleans between teeth where regular brushes miss. Essential for gum health.",
+    frequency: "Daily",
+    icon: <Smile className="w-6 h-6" />,
+    color: "text-cyan-500",
+    bg: "bg-cyan-50 dark:bg-cyan-900/20",
+    price: "$",
+    link: "https://www.tepe.com/uk/Products/interdental-brushes/tepe-interdental-brush-original-mixed-pack",
+  },
 
   // FITNESS
   {
     id: 5,
     category: "Health",
     subcategory: "Fitness",
-    name: "Insanity workout program",
+    name: "Insanity",
     reason:
       "High Intensity Interval Training improves VO2 max and metabolic rate more efficiently than steady state.",
     frequency: "Daily (30-60 mins)",
     icon: <Activity className="w-6 h-6" />,
     color: "text-orange-500",
     bg: "bg-orange-50 dark:bg-orange-900/20",
-    price: "Free",
+    price: "$$",
+    link: "https://www.beachbodyondemand.com/programs/insanity/start-here?locale=en_GB",
+    buttonText: "View Program",
   },
   {
     id: 6,
@@ -110,12 +131,14 @@ export const products: Product[] = [
     color: "text-orange-500",
     bg: "bg-orange-50 dark:bg-orange-900/20",
     price: "$$",
+    link: "https://www.beachbodyondemand.com/programs/p90x/start-here",
+    buttonText: "View Program",
   },
   {
     id: 7,
     category: "Health",
     subcategory: "Supplements",
-    name: "Creatine Monohydrate",
+    name: "Optimum Nutrition Micronised Creatine Powder",
     reason:
       "The most researched supplement. Boosts ATP for strength and improves cognitive function.",
     frequency: "Daily (5g scoop)",
@@ -123,6 +146,7 @@ export const products: Product[] = [
     color: "text-orange-500",
     bg: "bg-orange-50 dark:bg-orange-900/20",
     price: "$",
+    link: "https://www.optimumnutrition.com/en-gb/products/micronised-creatine-powder",
   },
   {
     id: 13,
@@ -148,6 +172,7 @@ export const products: Product[] = [
     color: "text-orange-500",
     bg: "bg-orange-50 dark:bg-orange-900/20",
     price: "$$",
+    link: "https://www.optimumnutrition.com/en-gb/products/platinum-hydrowhey-hydrolysed-whey-protein-powder-eu?gad_campaignid=19632621789&gad_source=1&gbraid=0AAAAACY5u4s_OmIRcOjO-YINx4jBuanxB&gclid=CjwKCAiA0eTJBhBaEiwA-Pa-hWqUWOSSTLdYaW8kalFJc4-hppJRdVg32nnF6Kt3Yp9414AFEu3zpBoCV8AQAvD_BwE&gclsrc=aw.ds",
   },
   {
     id: 29,
@@ -160,6 +185,7 @@ export const products: Product[] = [
     color: "text-orange-500",
     bg: "bg-orange-50 dark:bg-orange-900/20",
     price: "$$",
+    link: "https://www.optimumnutrition.com/en-gb/products/gold-standard-100-casein-protein-powder-eu",
   },
   {
     id: 30,
@@ -173,6 +199,7 @@ export const products: Product[] = [
     color: "text-orange-500",
     bg: "bg-orange-50 dark:bg-orange-900/20",
     price: "$",
+    link: "https://www.optimumnutrition.com/en-gb/products/electrolyte-powder?_pos=1&_psq=Electro&_ss=e&_v=1.0",
   },
 
   // NUTRITION
@@ -276,13 +303,13 @@ export const products: Product[] = [
     subcategory: "Finance",
     name: "Workplace Pension",
     reason:
-      "Essential tax-efficient saving. Prioritize schemes where the employer matches contributions.",
+      "Contributed by the worker then either matched percentage or lower by the employer. Essential tax-efficient saving.",
     frequency: "Monthly (Automated)",
     note: "Matched",
     icon: <Wallet className="w-6 h-6" />,
     color: "text-emerald-500",
     bg: "bg-emerald-50 dark:bg-emerald-900/20",
-    price: "Free",
+    price: "%",
     hideButton: true,
   },
 
@@ -353,6 +380,7 @@ export const products: Product[] = [
     color: "text-purple-500",
     bg: "bg-purple-50 dark:bg-purple-900/20",
     price: "$$",
+    link: "https://www.vitabiotics.com/products/wellman-anti-ageing-moisturiser?srsltid=AfmBOoohqKUJvA6fupCxU_-OrWyvAS16Tr6eW1AdX7DlX0yknb31AXvp",
   },
   {
     id: 16,
@@ -380,6 +408,7 @@ export const products: Product[] = [
     color: "text-purple-500",
     bg: "bg-purple-50 dark:bg-purple-900/20",
     price: "$$$",
+    link: "https://www.philips.co.uk/c-p/BT9810_13/beard-trimmer-9000-prestige-beard-trimmer",
   },
   {
     id: 18,
@@ -392,6 +421,20 @@ export const products: Product[] = [
     color: "text-purple-500",
     bg: "bg-purple-50 dark:bg-purple-900/20",
     price: "$$$",
+    link: "https://www.philips.co.uk/c-m-pe/face-shavers/latest?utm_id=20866219588&origin=7_9164824656_20866219588_156586002653_295615961976&gclsrc=aw.ds&gad_source=1&gad_campaignid=20866219588&gbraid=0AAAAAD9m5bD6Kie5I6hlUipmsLFxvQeOG&gclid=CjwKCAiA0eTJBhBaEiwA-Pa-haD7DlsXruA9b0IcTWFBP3vD1eB2H_UfsXvclQUod4ZflQUlfb0PjBoCq2EQAvD_BwE#availability=instock&filters=FK_MG_23_SERIES",
+  },
+  {
+    id: 34,
+    category: "Aesthetics",
+    subcategory: "Grooming",
+    name: "Phillips Head Shaver Pro 9000 Series",
+    reason: "Essential shaver with comfortcut.",
+    frequency: "As needed",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-purple-500",
+    bg: "bg-purple-50 dark:bg-purple-900/20",
+    price: "$$$",
+    link: "https://www.philips.co.uk/c-p/HS5980_15/head-shaver-pro-5000-series-essential-shaver-with-comfortcut",
   },
 
   // HAIR
@@ -410,6 +453,7 @@ export const products: Product[] = [
     color: "text-purple-500",
     bg: "bg-purple-50 dark:bg-purple-900/20",
     price: "$$",
+    hideButton: true,
   },
   {
     id: 17,
@@ -424,6 +468,7 @@ export const products: Product[] = [
     color: "text-purple-500",
     bg: "bg-purple-50 dark:bg-purple-900/20",
     price: "$",
+    hideButton: true,
   },
   {
     id: 19,
@@ -439,6 +484,7 @@ export const products: Product[] = [
     color: "text-purple-500",
     bg: "bg-purple-50 dark:bg-purple-900/20",
     price: "$$$",
+    hideButton: true,
   },
 
   // ACNE / SKIN
@@ -457,6 +503,7 @@ export const products: Product[] = [
     color: "text-purple-500",
     bg: "bg-purple-50 dark:bg-purple-900/20",
     price: "$$$",
+    hideButton: true,
   },
   {
     id: 21,
@@ -471,8 +518,8 @@ export const products: Product[] = [
     icon: <Sparkles className="w-6 h-6" />,
     color: "text-purple-500",
     bg: "bg-purple-50 dark:bg-purple-900/20",
-
     price: "$",
+    hideButton: true,
   },
   {
     id: 32,
@@ -486,6 +533,7 @@ export const products: Product[] = [
     color: "text-purple-500",
     bg: "bg-purple-50 dark:bg-purple-900/20",
     price: "$$",
+    link: "https://crest.com/en-us/oral-care-products/3d-whitestrips-glamorous-white",
   },
 ];
 

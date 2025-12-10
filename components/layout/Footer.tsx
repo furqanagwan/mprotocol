@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto px-6 space-y-8">
         {/* Living Document Note */}
         <div className="flex gap-4 p-4 bg-blue-50 dark:bg-blue-900/10 rounded-xl border border-blue-100 dark:border-blue-900/30">
-          <RefreshCw className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+          <RefreshCw className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5 animate-spin" />
           <p className="text-sm text-blue-800 dark:text-blue-200 leading-relaxed">
             <span className="font-semibold block mb-1">Living Protocol</span>
             This list is continuously evolved based on new research and
