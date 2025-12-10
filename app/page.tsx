@@ -25,11 +25,10 @@ export default function App() {
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches);
 
-    setDarkMode(isDark);
     if (isDark) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setDarkMode(true);
       document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
     }
   }, []);
 
@@ -83,10 +82,7 @@ export default function App() {
           setSortBy={setSortBy}
         />
 
-        <ProductGrid
-          activeCategory={activeCategory}
-          products={filteredProducts}
-        />
+        <ProductGrid products={filteredProducts} />
 
         <Footer />
       </div>
