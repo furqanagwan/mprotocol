@@ -6,12 +6,16 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import ProductGrid from "@/components/home/ProductGrid";
 import { products } from "@/lib/data";
+import { filterAndSortProducts } from "@/lib/utils";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeSubCategory, setActiveSubCategory] = useState("All");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState("Protocol");
 
   // Initialize theme based on preference and apply to document
   useEffect(() => {
@@ -48,17 +52,13 @@ export default function App() {
     setActiveSubCategory("All");
   };
 
-  const filteredProducts = products.filter((p) => {
-    // 1. Filter by Main Category
-    if (activeCategory !== "All" && p.category !== activeCategory) {
-      return false;
-    }
-    // 2. Filter by Sub Category
-    if (activeSubCategory !== "All" && p.subcategory !== activeSubCategory) {
-      return false;
-    }
-    return true;
-  });
+  const filteredProducts = filterAndSortProducts(
+    products,
+    searchQuery,
+    activeCategory,
+    activeSubCategory,
+    sortBy,
+  );
 
   return (
     <div className="transition-colors duration-300">
@@ -77,6 +77,10 @@ export default function App() {
           setActiveCategory={handleCategoryChange}
           activeSubCategory={activeSubCategory}
           setActiveSubCategory={setActiveSubCategory}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
         />
 
         <ProductGrid

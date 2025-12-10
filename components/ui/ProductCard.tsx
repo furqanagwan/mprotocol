@@ -1,5 +1,12 @@
-import React from "react";
-import { CheckCircle, Clock, ExternalLink, AlertTriangle } from "lucide-react";
+import React, { useState } from "react";
+import {
+  CheckCircle,
+  Clock,
+  ExternalLink,
+  AlertTriangle,
+  Copy,
+  Check,
+} from "lucide-react";
 
 interface ProductCardProps {
   product: {
@@ -24,8 +31,18 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    if (product.link) {
+      navigator.clipboard.writeText(product.link);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
   return (
-    <div className="group relative bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-blue-900/10 transition-all duration-300 flex flex-col">
+    <div className="group relative bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col">
       {/* Category Badge */}
       <div className="flex justify-between items-start mb-4">
         <div className={`p-3 rounded-xl ${product.bg} ${product.color}`}>
@@ -87,9 +104,24 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Action */}
       <div className="pt-4 border-t border-gray-100 dark:border-gray-800 mt-auto flex items-center justify-between">
-        <span className="text-sm font-medium text-gray-500">
-          {product.price}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-medium text-gray-500">
+            {product.price}
+          </span>
+          {product.link && (
+            <button
+              onClick={handleCopy}
+              className="p-1.5 text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+              title="Copy Link"
+            >
+              {copied ? (
+                <Check size={14} className="text-green-500" />
+              ) : (
+                <Copy size={14} />
+              )}
+            </button>
+          )}
+        </div>
         {product.appleLink && product.androidLink ? (
           <div className="flex gap-2">
             <a

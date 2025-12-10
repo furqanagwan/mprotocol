@@ -1,11 +1,16 @@
 import React from "react";
 import { mainCategories, hierarchy } from "@/lib/data";
+import { Search, SlidersHorizontal } from "lucide-react";
 
 interface HeroProps {
   activeCategory: string;
   setActiveCategory: (category: string) => void;
   activeSubCategory: string;
   setActiveSubCategory: (subCategory: string) => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+  sortBy: string;
+  setSortBy: (sort: string) => void;
 }
 
 export default function Hero({
@@ -13,6 +18,10 @@ export default function Hero({
   setActiveCategory,
   activeSubCategory,
   setActiveSubCategory,
+  searchQuery,
+  setSearchQuery,
+  sortBy,
+  setSortBy,
 }: HeroProps) {
   const subCategories =
     activeCategory !== "All" ? hierarchy[activeCategory] : [];
@@ -27,6 +36,54 @@ export default function Hero({
           A data-driven curation of tools for health, wealth, and aesthetics. No
           fluff. Just effective protocols.
         </p>
+
+        {/* SEARCH & SORT CONTROLS */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8 w-full max-w-2xl mx-auto">
+          {/* Search Bar */}
+          <div className="relative w-full">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-gray-400" />
+            </div>
+            <input
+              type="text"
+              placeholder="Search protocols..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="block w-full pl-10 pr-3 py-3 border border-gray-200 dark:border-gray-700 rounded-xl leading-5 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white transition-all shadow-sm"
+            />
+          </div>
+
+          {/* Sort Dropdown */}
+          <div className="relative min-w-[160px] w-full md:w-auto">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <SlidersHorizontal className="h-4 w-4 text-gray-400" />
+            </div>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="appearance-none block w-full pl-10 pr-8 py-3 border border-gray-200 dark:border-gray-700 rounded-xl leading-5 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white transition-all shadow-sm cursor-pointer"
+            >
+              <option value="Protocol">Sort: Protocol</option>
+              <option value="PriceLow">Price: Low to High</option>
+              <option value="PriceHigh">Price: High to Low</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+              <svg
+                className="h-4 w-4 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
 
         {/* MAIN CATEGORY TABS */}
         <div className="inline-flex w-full md:w-auto bg-white dark:bg-gray-900 p-1.5 rounded-full shadow-lg border border-gray-200 dark:border-gray-800 overflow-x-auto max-w-full mb-6 scrollbar-hide">
