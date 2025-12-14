@@ -326,45 +326,171 @@ export const products: Product[] = [
     hideButton: true,
   },
 
-  // LIFESTYLE
+  // LIFESTYLE - FASHION (Male)
   {
     id: 25,
     category: "Lifestyle",
     subcategory: "Fashion",
-    name: "White Leather Sneakers (Common Projects / Koio)",
-    reason: "Versatile foundation for almost any outfit.",
+    name: "White Leather Sneakers (Common Projects)",
+    reason:
+      "Minimalist Italian-made sneakers. The gold stamp is iconic. Pairs with everything from jeans to suits.",
     frequency: "Daily",
     note: "Essential",
     icon: <Sparkles className="w-6 h-6" />,
-    color: "text-pink-500",
-    bg: "bg-pink-50 dark:bg-pink-900/20",
-    price: "$$",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$$",
+    link: "https://www.commonprojects.com/",
   },
   {
     id: 26,
     category: "Lifestyle",
     subcategory: "Fashion",
-    name: "Tailored Navy Suit",
-    reason: "The standard for formal competence. Fit is everything.",
+    name: "Tailored Navy Suit (Suitsupply / Canali)",
+    reason:
+      "The cornerstone of any man's wardrobe. Fit is everything. Navy works for 90% of occasions.",
     frequency: "As needed",
     note: "Essential",
     icon: <Sparkles className="w-6 h-6" />,
-    color: "text-pink-500",
-    bg: "bg-pink-50 dark:bg-pink-900/20",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
     price: "$$$",
+    link: "https://suitsupply.com/",
   },
   {
     id: 27,
     category: "Lifestyle",
     subcategory: "Fashion",
-    name: "Merino Wool Tee",
-    reason: "Technical fabric performance with natural aesthetics.",
+    name: "Allbirds Wool Runners",
+    reason:
+      "Sustainable, crazy comfortable everyday sneaker. Machine washable for easy maintenance.",
     frequency: "Daily",
-    note: "Daily",
+    note: "Comfort",
     icon: <Sparkles className="w-6 h-6" />,
-    color: "text-pink-500",
-    bg: "bg-pink-50 dark:bg-pink-900/20",
-    price: "$",
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$",
+    link: "https://www.allbirds.com/",
+  },
+  {
+    id: 37,
+    category: "Lifestyle",
+    subcategory: "Fashion",
+    name: "Rolex Submariner / Tudor Black Bay",
+    reason:
+      "The ultimate everyday luxury watch. Holds value like an investment. Tudor offers Rolex quality at better price.",
+    frequency: "Daily",
+    note: "Investment",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$$$",
+    link: "https://www.rolex.com/",
+  },
+  {
+    id: 38,
+    category: "Lifestyle",
+    subcategory: "Fashion",
+    name: "Supreme Box Logo Hoodie",
+    reason:
+      "The streetwear grail. Limited drops and collaborations command collectors' prices.",
+    frequency: "Casual",
+    note: "Streetwear",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$$",
+    link: "https://www.supremenewyork.com/",
+  },
+  {
+    id: 39,
+    category: "Lifestyle",
+    subcategory: "Fashion",
+    name: "Selvedge Denim (A.P.C. / Naked & Famous)",
+    reason:
+      "Raw denim that fades uniquely to you over time. An investment in personalized style.",
+    frequency: "Daily",
+    note: "Premium",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$",
+    link: "https://www.apc.fr/",
+  },
+  {
+    id: 40,
+    category: "Lifestyle",
+    subcategory: "Fashion",
+    name: "Chelsea Boots (R.M. Williams / Carmina)",
+    reason:
+      "The sleek dress boot. One-piece leather construction. Works with denim or dress pants.",
+    frequency: "Daily",
+    note: "Classic",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$$",
+    link: "https://www.rmwilliams.com/",
+  },
+  {
+    id: 41,
+    category: "Lifestyle",
+    subcategory: "Fashion",
+    name: "Kith Classic Logo Hoodie",
+    reason:
+      "Premium streetwear from the NYC legend. Quality materials and clean designs that age well.",
+    frequency: "Casual",
+    note: "Streetwear",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$",
+    link: "https://kith.com/",
+  },
+  {
+    id: 42,
+    category: "Lifestyle",
+    subcategory: "Fashion",
+    name: "Gucci Ace Sneakers",
+    reason:
+      "Italian luxury meets streetwear. The bee or stripe detail is subtly iconic. Statement piece.",
+    frequency: "Occasion",
+    note: "Luxury",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$$$",
+    link: "https://www.gucci.com/",
+  },
+  {
+    id: 43,
+    category: "Lifestyle",
+    subcategory: "Fashion",
+    name: "Patagonia Better Sweater",
+    reason:
+      "The perfect casual layer. Sustainable production, lifetime guarantee, works everywhere.",
+    frequency: "Daily",
+    note: "Sustainable",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$",
+    link: "https://www.patagonia.com/",
+  },
+  {
+    id: 44,
+    category: "Lifestyle",
+    subcategory: "Fashion",
+    name: "Off-White Industrial Belt",
+    reason:
+      "Virgil Abloh's iconic design. The quotation marks aesthetic defined a decade of fashion.",
+    frequency: "Occasion",
+    note: "Statement",
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-blue-500",
+    bg: "bg-blue-50 dark:bg-blue-900/20",
+    price: "$$$",
+    link: "https://www.off---white.com/",
   },
 
   // SKIN
@@ -607,6 +733,36 @@ export const bundles: Bundle[] = [
     color: "text-emerald-500",
     bg: "bg-gradient-to-br from-emerald-50 to-teal-100 dark:from-emerald-900/20 dark:to-teal-900/20",
   },
+  {
+    id: "hair-protocol",
+    name: "Hair Loss Defense Protocol",
+    description:
+      "The proven approach to maintaining hair. Finasteride, Minoxidil, and emerging treatments.",
+    productIds: [14, 17, 19],
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-violet-500",
+    bg: "bg-gradient-to-br from-violet-50 to-indigo-100 dark:from-violet-900/20 dark:to-indigo-900/20",
+  },
+  {
+    id: "grooming-essentials",
+    name: "Grooming Essentials",
+    description:
+      "Complete men's grooming toolkit. From beard maintenance to a clean shave.",
+    productIds: [12, 18, 34],
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-gray-500",
+    bg: "bg-gradient-to-br from-gray-50 to-slate-100 dark:from-gray-900/20 dark:to-slate-900/20",
+  },
+  {
+    id: "mens-wardrobe",
+    name: "Men's Capsule Wardrobe",
+    description:
+      "Investment pieces that every man needs. Build a versatile, timeless closet.",
+    productIds: [25, 26, 39, 40, 43],
+    icon: <Sparkles className="w-6 h-6" />,
+    color: "text-indigo-500",
+    bg: "bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-indigo-900/20 dark:to-blue-900/20",
+  },
 ];
 
 // Tier assignments for key products (essential = must-have, advanced = optimization, optional = nice-to-have)
@@ -645,20 +801,28 @@ export const productTiers: Record<number, ProductTier> = {
   20: "advanced", // Accutane
   21: "advanced", // Tretinoin
 
-  // Grooming
-  12: "optional", // Beardtrimmer
+  // Grooming (Male)
+  12: "essential", // Beardtrimmer
   18: "optional", // Shaver
   34: "optional", // Head shaver
 
-  // Hair
+  // Hair (Male)
   14: "advanced", // Finasteride
   17: "advanced", // Minoxidil
   19: "optional", // Pyrilutimide
 
   // Fashion
-  25: "essential", // Sneakers
-  26: "advanced", // Suit
-  27: "optional", // Merino tee
+  25: "essential", // White Sneakers
+  26: "essential", // Tailored Suit
+  27: "optional", // Allbirds Wool Runners
+  37: "advanced", // Rolex/Tudor Watch
+  38: "optional", // Supreme Hoodie
+  39: "essential", // Selvedge Denim
+  40: "essential", // Chelsea Boots
+  41: "optional", // Kith Hoodie
+  42: "advanced", // Gucci Sneakers
+  43: "essential", // Patagonia
+  44: "optional", // Off-White Belt
 
   // Teeth
   32: "optional", // Whitestrips
