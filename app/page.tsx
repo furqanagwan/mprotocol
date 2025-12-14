@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
@@ -9,6 +10,7 @@ import Newsletter from "@/components/home/Newsletter";
 import BundleCard from "@/components/ui/BundleCard";
 import { products, bundles } from "@/lib/data";
 import { filterAndSortProducts } from "@/lib/utils";
+import { User, ArrowRight } from "lucide-react";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -83,6 +85,37 @@ export default function App() {
           sortBy={sortBy}
           setSortBy={setSortBy}
         />
+
+        {/* Know Your Body CTA */}
+        {activeCategory === "All" && !searchQuery && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <Link href="/body">
+              <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.01] cursor-pointer group">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl group-hover:scale-110 transition-transform" />
+                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <User className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="text-center md:text-left">
+                      <h3 className="text-xl md:text-2xl font-bold text-white">
+                        Know Your Body
+                      </h3>
+                      <p className="text-white/80 text-sm md:text-base">
+                        Interactive 3D health awareness guide with screening
+                        recommendations
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-white font-semibold group-hover:bg-white/30 transition-colors">
+                    Explore
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </section>
+        )}
 
         {/* Protocol Bundles Section */}
         {activeCategory === "All" && !searchQuery && (
