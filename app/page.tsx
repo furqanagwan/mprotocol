@@ -5,7 +5,9 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import ProductGrid from "@/components/home/ProductGrid";
-import { products } from "@/lib/data";
+import Newsletter from "@/components/home/Newsletter";
+import BundleCard from "@/components/ui/BundleCard";
+import { products, bundles } from "@/lib/data";
 import { filterAndSortProducts } from "@/lib/utils";
 
 export default function App() {
@@ -82,7 +84,29 @@ export default function App() {
           setSortBy={setSortBy}
         />
 
+        {/* Protocol Bundles Section */}
+        {activeCategory === "All" && !searchQuery && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
+                Protocol Stacks
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400 mt-2">
+                Curated bundles for specific goals. Start with a complete
+                protocol.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {bundles.map((bundle) => (
+                <BundleCard key={bundle.id} bundle={bundle} />
+              ))}
+            </div>
+          </section>
+        )}
+
         <ProductGrid products={filteredProducts} />
+
+        <Newsletter />
 
         <Footer />
       </div>
